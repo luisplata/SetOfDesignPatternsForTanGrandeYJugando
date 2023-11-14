@@ -15,4 +15,13 @@ public class EnemiesFactory
 
         return Object.Instantiate(prefab);
     }
+
+    public string GetEnemyRandom()
+    {
+        var enemies = _enemiesConfiguration.Enemies;
+        var random = Random.Range(0, enemies.Count);
+        var enemyTemplate = enemies[random];
+        Debug.Log($"enemyTemplate {enemyTemplate.Id}");
+        return enemyTemplate.Id;
+    }
 }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameComplete : MonoBehaviour
 {
-    [SerializeField] private GameObject uiToStart;
+    [SerializeField] private GameObject uiToStart, uiEndGame;
     [SerializeField] private SpawnerController spawnerController;
     private TeaTime _beforeStart, _start, _end;
     private bool _isStart;
@@ -15,6 +15,7 @@ public class GameComplete : MonoBehaviour
 
     private void Start()
     {
+        uiEndGame.SetActive(false);
         uiToStart.SetActive(true);
         _beforeStart = this.tt().Pause().Add(() =>
         {
@@ -38,7 +39,7 @@ public class GameComplete : MonoBehaviour
         {
             _isStart = false;
             //Debug.Log("End");
-            uiToStart.SetActive(true);
+            uiEndGame.SetActive(true);
         }).Wait(()=>true,10).Add(() =>
         {
             if (_isStart)

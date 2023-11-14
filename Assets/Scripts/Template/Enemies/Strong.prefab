@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6202530939409759745}
   - component: {fileID: 338344740325502858}
   m_Layer: 0
-  m_Name: EnemyDefault
+  m_Name: Strong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,11 +102,11 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3366402006201550668}
   collider2D: {fileID: 6202530939409759745}
   pointsToMove: []
-  id: default
-  colorOfEnemy: {r: 1, g: 1, b: 1, a: 1}
+  id: strong
+  colorOfEnemy: {r: 1, g: 0, b: 0, a: 1}
   maxDistanceToMove: 0.1
   speed: 2
-  damage: 1
+  damage: 2
   pointsToPlayer: 1
 --- !u!61 &6202530939409759745
 BoxCollider2D:

@@ -41,7 +41,9 @@ public class SpawnerController : MonoBehaviour, ISpawnController
             var middlePoint = middle[Random.Range(0, middle.Length)];
             var endPoint = end[Random.Range(0, end.Length)];
             var listOfPointsToMove = new[] { beggingPoint, middlePoint, endPoint };
-            _enemySpawner.SpawnEnemy("default", listOfPointsToMove);
+            //calc to what is the next enemy
+            var nameOfNextEnemy = _enemiesFactory.GetEnemyRandom();
+            _enemySpawner.SpawnEnemy(nameOfNextEnemy, listOfPointsToMove);
         }
     }
 

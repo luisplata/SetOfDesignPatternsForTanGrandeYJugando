@@ -25,4 +25,6 @@ public class EnemiesConfiguration : ScriptableObject
         }
         return enemy;
     }
+    
+    public List<EnemyTemplate> Enemies => new(enemies); 
 }

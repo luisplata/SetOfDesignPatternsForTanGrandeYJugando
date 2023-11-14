@@ -1,3 +1,4 @@
+using System;
 using SL;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,11 @@ public class PointToPlayer : MonoBehaviour, IPointsToPlayer
     {
         ServiceLocator.Instance.RegisterService<IPointsToPlayer>(this);
         UpdatePoints(0);
+    }
+
+    private void OnDestroy()
+    {
+        ServiceLocator.Instance.RemoveService<IPointsToPlayer>();
     }
 
     public void UpdatePoints(int points)
